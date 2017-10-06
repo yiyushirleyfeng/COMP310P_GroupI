@@ -1,6 +1,6 @@
 # COMP310P_GroupI
 
 Hello
-How are you? I'm along in this group at the moment.
+I am Shirley. I like cake.
 
 This group will create an event management system for sports events
