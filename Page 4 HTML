@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new event</title>
+</head>
+
+<body>
+<div>
+    <p>
+        EVENT NAME:
+        <input type="text" placeholder="">
+    </p>
+
+    <p>
+        DATE:
+        <input type="text" placeholder="">
+    </p>
+
+    <p>
+        TIME:
+        <input type="text" placeholder="">
+    </p>
+
+    <p>
+        CATEGORY:
+        <input type="text" placeholder="">
+    </p>
+
+    <p>
+        ADDRESS:
+        <input type="text" placeholder="">
+    </p>
+
+    <p>
+        CONTACT INFORMATION:
+        <input type="text" placeholder="">
+    </p>
+
+    <p>
+        EXTRA INFORMATION:
+        <input type="text" placeholder="">
+    </p>
+
+    <p>
+        PURCHASE DEADLINE:
+        <input type="text" placeholder="">
+    </p>
+
+    <p>
+        NO. OF TICKETS:
+        <input type="text" placeholder="">
+    </p>
+
+    <p>
+        TICKET PRICE:
+        <input type="text" placeholder="">
+    </p>
+</div>
+
+</body>
+</html>
