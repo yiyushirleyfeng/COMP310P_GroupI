@@ -1,14 +1,15 @@
 <?php 
 
-	include 'createEvent.php';
-	include 'createToolbar.php';
-
-	$username = "root";
-	$password = "root";
-	$dbhost = "localhost";
-	$db = "football_management";
+	include 'Methods.php';
 	
-	$con = mysqli_connect($dbhost,$username,$password,$db);
+	$username = $_COOKIE['username'];
+	$user_id = $_COOKIE['user_id'];
+	
+	if ($username) {
+	echo "You are logged in as $username";
+	}
+	
+	$con = connectServer();
 	$query = " select * from event join venue on venue.venue_id=event.venue_id join booking on event.event_id=booking.event_id where user_id = 1;";
 	$result = mysqli_query($con,$query);
 ?>

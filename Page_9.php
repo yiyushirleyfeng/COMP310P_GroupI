@@ -1,6 +1,5 @@
 <?php 
-	include 'createEvent.php';
-	include 'createToolbar.php';
+	include 'Methods.php';
 	
 	$username = "root";
 	$password = "root";
