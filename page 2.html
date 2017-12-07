@@ -3,156 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Football Event</title>
-    <style>
-        /*Toolbar*/
-        #toolbar {
-            width:1000px;
-            height:100px;
-            background: #4C4CFF;
-            border-radius: 20px;
-            position: relative;
-        }
-        #logo {
-            color:white;
-            font-family:Helvetica;
-            position: absolute;
-            top:0px;
-            left:5px;
-            font-size:130%;
-        }
-        #searchBar {
-            position:absolute;
-            bottom:10px;
-            left:300px;
-        }
-        .searchBar input {
-            width:400px;
-            height:150px;
-        }
-        #user {
-            position:absolute;
-            right:10px;
-            top:-10px;
-            color:white;
-        }
-        #toolbarButtons {
-            position:absolute;
-            width:360px;
-            height:50px;
-            right:30px;
-            bottom:10px;
-            background:white;
-            border-radius:20px;
-        }
-        #yourEventButton {
-            width:120px;
-            height:50px;
-            position:absolute;
-            left:20px;
-            top:-5px;
-        }
-        #yourBookingButton {
-            width:120px;
-            height:50px;
-            position:absolute;
-            left:130px;
-            top:-5px;
-        }
-        #profileButton {
-            width:120px;
-            height:50px;
-            position:absolute;
-            left: 270px;
-            top:-5px;
-        }
-        /*Header*/
-        #header {
-            position:relative;
-            left:20px;
-        }
-        /*Events*/
-        #event {
-            position: relative;
-            left:20px;
-            background: blue;
-            width:300px;
-            height:400px;
-            border-radius:20px;
-        }
-        #eventProperties p {
-            color:white;
-        }
-        #eventProperties {
-            position:absolute;
-            left:20px;
-        }
+    <link href="MainHeadCSS.css" type="text/css" rel="stylesheet"/>
 
-        h1{
-            font-size:30px;
-            font-family:Arial;
-            text-align: center;
-        }
-
-        form{
-            font-size:15px;
-            text-align: center;
-            margin-bottom: 1%;
-            margin-top: 5%;
-        }
-
-    </style>
 </head>
 
 <body>
-<div id="toolbar">
-    <div id="logo">
-        <h1>LOGO</h1>
+
+<div class=logo>
+    <div class="transbox">
+        <img src="http://www.stirlingalbionfc.co.uk/wp-content/uploads/2017/07/football-game.png" alt="Logo" height="150" width="150"/>
+        <h1>Social Football</h1>
+        <p>Arrange your next social match here!</p>
     </div>
-    <div id="searchBar">
-        <input type="text" placeholder="Search">
-        <button id="searchButton">Search</button>
-    </div>
-    <div id="user">
-        <p>Hi User! | Logout</p>
-    </div>
-    <div id="toolbarButtons">
-        <div id="yourEventButton">
-            <h5>YOUR EVENT</h5>
-        </div>
-        <div id="yourBookingButton">
-            <h5>YOUR BOOKING</h5>
-        </div>
-        <div id="profileButton">
-            <h5>PROFILE</h5>
-        </div>
-    </div>
+
 </div>
 
-    <h1>SIGN UP WITH YOUR EMAIL ADDRESS!</h1>
+
+<div class="signup">
+<h1>SIGN UP WITH YOUR EMAIL ADDRESS</h1>
 <form>
-    EMAIL:<br/>
+    <h2>EMAIL:</h2>
     <input type="text" name="text1"><br/>
 
-    FIRST NAME:<br/>
+    <h2>FIRST NAME:</h2>
     <input type="text" name="text2"><br/>
 
-     LAST NAME:<br/>
+    <h2>LAST NAME:</h2>
     <input type="text" name="text3"><br/>
 
-     USER NAME:<br/>
+    <h2>USER NAME:</h2>
     <input type="text" name="text4"><br/>
 
 
-     PASSWORD:<br/>
+    <h2>PASSWORD:</h2>
     <input type="text" name="text5"><br/>
 
 
-     CONTACT NUMBER:<br/>
-    <input type="number" name="text6"><br/>
+    <h2>CONTACT NUMBER:</h2>
+    <input type="text" name="text6"><br/>
 
 
-<input type="submit" name="submit" value="Submit">
-    </form>
+    <input type="submit" name="submit" value="Submit">
+</form>
+    </div>
 
 </body>
 </html>
