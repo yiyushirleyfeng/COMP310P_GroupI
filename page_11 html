@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Football Event</title>
+    <link href="MainHeadCSS.css" type="text/css" rel="stylesheet"/>
+
+</head>
+    <div class=logo>
+        <div class="transbox">
+            <img src="http://www.stirlingalbionfc.co.uk/wp-content/uploads/2017/07/football-game.png" alt="Logo" height="150" width="150"/>
+            <h1>Social Football</h1>
+            <p>Arrange your next social match here!</p>
+        </div>
+    </div>
+
+<div class="welcome">
+    <h1>Welcome Back!</h1>
+
+    <h2>USERNAME:</h2>
+    <input type="text">
+    <h2>PASSWORD:</h2>
+    <input type="text">
+    <button>Submit</button>
+
+</div>
+
+
+</body>
+</html>
