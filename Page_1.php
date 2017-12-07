@@ -2,41 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Football Event</title>
+    <title>Football Management Home</title>
+    <link href="MainHeadCSS.css" type="text/css" rel="stylesheet"/>
 </head>
-<div id="toolbar">
-    <div id="logo">
-        <h1>LOGO</h1>
-    </div>
-    <div id="searchBar">
-        <input type="text" placeholder="Search">
-        <button id="searchButton">Search</button>
-    </div>
-    <div id="user">
-        <p>Hi User! | Logout</p>
-    </div>
-    <div id="toolbarButtons">
-        <div id="yourEventButton">
-            <h5>YOUR EVENT</h5>
-        </div>
-        <div id="yourBookingButton">
-            <h5>YOUR BOOKING</h5>
-        </div>
-        <div id="profileButton">
-            <h5>PROFILE</h5>
-        </div>
-    </div>
-</div>
-<h3>Join a match!</h3>
-
 <body>
 
-<h1>SEARCH FOR VENUE!</h1>
-<h2>
+        <div class=logo>
+            <div class="transbox">
+            <img src="http://www.stirlingalbionfc.co.uk/wp-content/uploads/2017/07/football-game.png" alt="Logo" height="150" width="150"/>
+            <h1>Social Football</h1>
+            <p>Arrange your next social match here!</p>
+        </div>
+</div>
 
-    <input type="text" name="text" value="Submit"><input type="submit" name="SEARCH" value="Submit">
-</h2>
+        <div class="joinmatch">
+            <h1>Join a match!</h1>
+            <h2><a href="page_11.html" target="_blank">LOGIN</a></h2>
+            <h2><a href="page_2.html" target="_blank">SIGN UP</a></h2>
 
+        </div>
+</div>
 
 </body>
 </html>
