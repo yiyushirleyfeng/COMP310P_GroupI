@@ -174,13 +174,13 @@ function test_input($data) {
 
         <p>
             START TIME:
-            <input type="stime" name="stime" placeholder="">
+            <input type="time" name="stime" placeholder="">
             <span class="error">* <?php echo $stimeErr;?></span>
         </p>
 
         <p>
             END TIME:
-            <input type="etime" name="etime" placeholder="">
+            <input type="time" name="etime" placeholder="">
             <span class="error">* <?php echo $etimeErr;?></span>
         </p>
 
