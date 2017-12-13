@@ -1,0 +1,82 @@
+/*Toolbar*/
+		#toolbar {
+			width:1000px;
+			height:100px;
+			background: #4C4CFF;
+			border-radius: 20px;
+			position: relative;
+		}
+		#toolbar_logo {
+			color:white;
+			font-family:Helvetica;
+			position: absolute;
+			top:0px;
+			left:5px;
+			font-size:130%;
+		}
+		#toolbar_searchBar {
+			position:absolute;
+			bottom:10px;
+			left:300px;
+		}
+		.searchBar input {
+			width:400px;
+			height:150px;
+		}
+		#toolbar_user {
+			position:absolute;
+			right:10px;
+			top:-10px;
+			color:white;
+		}
+		#toolbar_buttons {
+			position:absolute;
+			width:360px;
+			height:50px;
+			right:30px;
+			bottom:10px;
+			background:white;
+			border-radius:20px;
+		}
+		#toolbar_yourEventButton {
+			width:120px;
+			height:50px;
+			position:absolute;
+			left:20px;
+			top:-5px;
+		}
+		#toolbar_yourBookingButton {
+			width:120px;
+			height:50px;
+			position:absolute;
+			left:130px;
+			top:-5px;
+		}
+		#toolbar_profileButton {
+			width:120px;
+			height:50px;
+			position:absolute;
+			left: 270px;
+			top:-5px;
+		}
+	/*Header*/
+		#header {
+			position:relative;
+			left:20px;
+			clear: both;
+		}
+	/*Events*/
+		.event {
+			position: relative;
+			left:20px;
+			background: grey;
+			width:300px;
+			height:500px;
+			border-radius:20px;
+			float: left;
+			margin: 5px;
+			padding:10px;
+		}
+		.event_properties p {
+			color:white;
+		}
