@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 14, 2017 at 12:22 AM
+-- Generation Time: Dec 14, 2017 at 03:08 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -18,9 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+GRANT ALL PRIVILEGES ON Football_management.* TO 'user'@localhost identified by 'emilyilhamshirley';
+
 --
 -- Database: `football_management`
 --
+CREATE DATABASE IF NOT EXISTS `football_management` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `football_management`;
 
 -- --------------------------------------------------------
 
@@ -44,7 +48,8 @@ INSERT INTO `booking` (`booking_id`, `ticket_id`, `user_id`) VALUES
 (3, 2, 2),
 (4, 5, 2),
 (5, 6, 3),
-(6, 7, 2);
+(6, 7, 2),
+(7, 12, 1);
 
 -- --------------------------------------------------------
 
@@ -76,7 +81,9 @@ CREATE TABLE `event` (
 INSERT INTO `event` (`event_id`, `venue_id`, `event_name`, `category`, `date`, `start_time`, `end_time`, `contact_information`, `extra_information`, `number_of_tickets`, `tickets_available`, `host_id`, `deadline_purchase`, `ticket_price`) VALUES
 (1, 1, 'Monday Match', '11-a-side', '2017-12-01', '10:00', '12:00', '0123456789', 'Meet me at the lobby', 3, 1, 1, '2017-12-01', 5),
 (2, 2, 'Football Match', '11-a-side', '2017-12-01', '12:00', '14:00', '1234839', 'Go to pitch 7', 2, 0, 3, '2017-12-01', 6),
-(3, 4, 'New Years Eve Game!', '5-a-side', '2017-12-31', '20:00', '22:00', '012345678', 'Meet me at the lobby', 3, 1, 1, '2017-12-30', 5);
+(3, 4, 'New Years Eve Game!', '5-a-side', '2017-12-31', '20:00', '22:00', '012345678', 'Meet me at the lobby', 3, 1, 1, '2017-12-30', 5),
+(4, 3, '11-a-side game', '11-a-side', '2018-01-01', '10:00', '12:00', '0741238019', 'Bring turf shoes', 3, 3, 1, '2017-12-31', 5),
+(5, 1, 'Football!', '5-a-side', '2018-01-07', '14:00', '16:00', '07238172389', '', 2, 1, 2, '2018-01-06', 3);
 
 -- --------------------------------------------------------
 
@@ -125,7 +132,12 @@ INSERT INTO `ticket` (`ticket_id`, `event_id`, `ticket_price`, `user_id`) VALUES
 (5, 2, 6, 2),
 (6, 3, 5, 3),
 (7, 3, 5, 2),
-(8, 3, 5, NULL);
+(8, 3, 5, NULL),
+(9, 4, 5, NULL),
+(10, 4, 5, NULL),
+(11, 4, 5, NULL),
+(12, 5, 3, 1),
+(13, 5, 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -226,12 +238,12 @@ ALTER TABLE `venue`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `rating`
 --
@@ -241,7 +253,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `user`
 --
