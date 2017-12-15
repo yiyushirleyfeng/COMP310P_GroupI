@@ -1,5 +1,5 @@
 <?php
-	function connectServer() {
+	function connectDatabase() {
 		$username = "root";
 		$password = "root";
 		$dbhost = "localhost";
@@ -27,10 +27,10 @@
 		echo "</div>";
 		echo "<div id=\"toolbar_buttons\">";
 		echo "	<div id=\"toolbar_yourEventButton\">";
-		echo "	<h5>YOUR EVENT</h5>";
+		echo "	<a href='event_page.php'><h5>YOUR EVENTS</h5></a>";
 		echo "	</div>";
 		echo "	<div id=\"toolbar_yourBookingButton\">";
-		echo "	<h5>YOUR BOOKING</h5>";
+		echo "	<a href='booking_page.php'><h5>YOUR BOOKINGS</h5></a>";
 		echo "	</div>";
 		echo "	<div id=\"toolbar_profileButton\">";
 		echo "	<h5>PROFILE</h5>";
@@ -43,17 +43,17 @@
 		echo "<div class=\"event\">";
 		echo "<div class=\"event_properties\">";
 		echo "<br>";
-		echo "<p>EVENT NAME:".$row['event_name']."</p>";
-		echo "<p>ADDRESS:". $row['address']."</p>";
-		echo "<p>CATEGORY:". $row['category']."</p>";
-		echo "<p>TIME:". $row['start_time']." - ". $row['end_time'] ." </p>";
-		echo "<p>DATE:". $row['date']."</p>";
-		echo "<p>TICKET PRICE:</p>";
-		echo "<p>PURCHASE DEADLINE:</p>";
-		echo "<p>NO OF TICKETS:".$row['number_of_tickets']."</p>";
-		echo "<p>TICKETS AVAILABLE:".$row['tickets_available']."</p>";
-		echo "<p>CONTACT INFO:". $row['contact_information']."</p>";
-		echo "<p>EXTRA INFO:". $row['extra_information']."</p>";
+		echo "<p>EVENT NAME: ".$row['event_name']."</p>";
+		echo "<p>ADDRESS: ". $row['address']."</p>";
+		echo "<p>CATEGORY: ". $row['category']."</p>";
+		echo "<p>TIME: ". $row['start_time']." - ". $row['end_time'] ." </p>";
+		echo "<p>DATE: ". $row['date']."</p>";
+		echo "<p>TICKET PRICE: ".$row['ticket_price']."</p>";
+		echo "<p>PURCHASE DEADLINE: ".$row['deadline_purchase']."</p>";
+		echo "<p>NO OF TICKETS: ".$row['number_of_tickets']."</p>";
+		echo "<p>TICKETS AVAILABLE: ".$row['tickets_available']."</p>";
+		echo "<p>CONTACT INFO: ". $row['contact_information']."</p>";
+		echo "<p>EXTRA INFO: ". $row['extra_information']."</p>";
 		echo "<a href='booking.php?event_id=$event_id'><h2>Book now</h2></a>";
 		echo "</div>";
 		echo "</div>";
@@ -63,18 +63,19 @@
 		echo "<div class=\"event\">";
 		echo "<div class=\"event_properties\">";
 		echo "<br>";
-		echo "<p>EVENT NAME:".$row['event_name']."</p>";
-		echo "<p>ADDRESS:". $row['address']."</p>";
-		echo "<p>CATEGORY:". $row['category']."</p>";
-		echo "<p>TIME:". $row['start_time']." - ". $row['end_time'] ." </p>";
-		echo "<p>DATE:". $row['date']."</p>";
-		echo "<p>TICKET PRICE:</p>";
-		echo "<p>PURCHASE DEADLINE:</p>";
-		echo "<p>NO OF TICKETS:".$row['number_of_tickets']."</p>";
-		echo "<p>TICKETS AVAILABLE:".$row['tickets_available']."</p>";
-		echo "<p>CONTACT INFO:". $row['contact_information']."</p>";
-		echo "<p>EXTRA INFO:". $row['extra_information']."</p>";
-		echo "<a href='Page_12.php?event_id=$event_id'><h2>View Participants</h2></a>";
+		echo "<p>EVENT NAME: ".$row['event_name']."</p>";
+		echo "<p>ADDRESS: ". $row['address']."</p>";
+		echo "<p>CATEGORY: ". $row['category']."</p>";
+		echo "<p>TIME: ". $row['start_time']." - ". $row['end_time'] ." </p>";
+		echo "<p>DATE: ". $row['date']."</p>";
+		echo "<p>TICKET PRICE: ".$row['ticket_price']."</p>";
+		echo "<p>PURCHASE DEADLINE: ".$row['deadline_purchase']."</p>";
+		echo "<p>NO OF TICKETS: ".$row['number_of_tickets']."</p>";
+		echo "<p>TICKETS AVAILABLE: ".$row['tickets_available']."</p>";
+		echo "<p>CONTACT INFO: ". $row['contact_information']."</p>";
+		echo "<p>EXTRA INFO: ". $row['extra_information']."</p>";
+		echo "<a href='participants_page.php?event_id=$event_id'><h2>View Participants</h2></a>";
+		echo "<a href='eventrating_page.php?event_id=$event_id'><h2>View Ratings</h2></a>";
 		echo "</div>";
 		echo "</div>";
 	}
@@ -83,37 +84,38 @@
 		echo "<div class=\"event\">";
 		echo "<div class=\"event_properties\">";
 		echo "<br>";
-		echo "<p>EVENT NAME:".$row['event_name']."</p>";
-		echo "<p>ADDRESS:". $row['address']."</p>";
-		echo "<p>CATEGORY:". $row['category']."</p>";
-		echo "<p>TIME:". $row['start_time']." - ". $row['end_time'] ." </p>";
-		echo "<p>DATE:". $row['date']."</p>";
-		echo "<p>TICKET PRICE:". $row['ticket_price'] ."</p>";
-		echo "<p>PURCHASE DEADLINE:</p>";
-		echo "<p>NO OF TICKETS:".$row['number_of_tickets']."</p>";
-		echo "<p>TICKETS AVAILABLE:".$row['tickets_available']."</p>";
-		echo "<p>CONTACT INFO:". $row['contact_information']."</p>";
-		echo "<p>EXTRA INFO:". $row['extra_information']."</p>";
+		echo "<p>EVENT NAME: ".$row['event_name']."</p>";
+		echo "<p>ADDRESS: ". $row['address']."</p>";
+		echo "<p>CATEGORY: ". $row['category']."</p>";
+		echo "<p>TIME: ". $row['start_time']." - ". $row['end_time'] ." </p>";
+		echo "<p>DATE: ". $row['date']."</p>";
+		echo "<p>TICKET PRICE: ". $row['ticket_price'] ."</p>";
+		echo "<p>PURCHASE DEADLINE: ". $row['deadline_purchase']."</p>";
+		echo "<p>NO OF TICKETS: ".$row['number_of_tickets']."</p>";
+		echo "<p>TICKETS AVAILABLE: ".$row['tickets_available']."</p>";
+		echo "<p>CONTACT INFO: ". $row['contact_information']."</p>";
+		echo "<p>EXTRA INFO: ". $row['extra_information']."</p>";
 		echo "</div>";
 		echo "</div>";
 	}
-	function createEventRating($row) {
+	function createEventMakeRating($row) {
 		$event_id = $row['event_id'];
 		echo "<div class=\"event\">";
 		echo "<div class=\"event_properties\">";
 		echo "<br>";
-		echo "<p>EVENT NAME:".$row['event_name']."</p>";
-		echo "<p>ADDRESS:". $row['address']."</p>";
-		echo "<p>CATEGORY:". $row['category']."</p>";
-		echo "<p>TIME:". $row['start_time']." - ". $row['end_time'] ." </p>";
-		echo "<p>DATE:". $row['date']."</p>";
-		echo "<p>TICKET PRICE:</p>";
-		echo "<p>PURCHASE DEADLINE:</p>";
-		echo "<p>NO OF TICKETS:".$row['number_of_tickets']."</p>";
-		echo "<p>TICKETS AVAILABLE:".$row['tickets_available']."</p>";
-		echo "<p>CONTACT INFO:". $row['contact_information']."</p>";
-		echo "<p>EXTRA INFO:". $row['extra_information']."</p>";
-		echo "<a href='Page_14.php?event_id=$event_id'><h2>View Ratings</h2></a>";
+		echo "<p>EVENT NAME: ".$row['event_name']."</p>";
+		echo "<p>ADDRESS: ". $row['address']."</p>";
+		echo "<p>CATEGORY: ". $row['category']."</p>";
+		echo "<p>TIME: ". $row['start_time']." - ". $row['end_time'] ." </p>";
+		echo "<p>DATE: ". $row['date']."</p>";
+		echo "<p>TICKET PRICE: ".$row['ticket_price']."</p>";
+		echo "<p>PURCHASE DEADLINE: ".$row['deadline_purchase']."</p>";
+		echo "<p>NO OF TICKETS: ".$row['number_of_tickets']."</p>";
+		echo "<p>TICKETS AVAILABLE: ".$row['tickets_available']."</p>";
+		echo "<p>CONTACT INFO: ". $row['contact_information']."</p>";
+		echo "<p>EXTRA INFO: ". $row['extra_information']."</p>";
+		echo "<a href='addrating_page.php?event_id=$event_id'><h2>Add Ratings</h2></a>";
+		echo "<a href='eventrating_page.php?event_id=$event_id'><h2>View Ratings</h2></a>";
 		echo "</div>";
 		echo "</div>";
 	}
@@ -161,25 +163,25 @@
 		
 		$query = "";
 		if ($category and $ground and ($dateStart or $dateEnd)) {
-			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($categoryString) and ($groundString) and ($dateString)";
+			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($categoryString) and ($groundString) and ($dateString) and (tickets_available>0) and (curdate()<=deadline_purchase)";
 		}
 		elseif ($category and $ground) {
-			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($categoryString) and ($groundString)";
+			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($categoryString) and ($groundString) and (tickets_available>0) and (curdate()<=deadline_purchase)";
 		}
 		elseif ($category and ($dateStart or $dateEnd)) {
-			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($categoryString) and ($dateString)";
+			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($categoryString) and ($dateString) and (tickets_available>0) and (curdate()<=deadline_purchase)";
 		}
 		elseif ($ground and ($dateStart or $dateEnd)) {
-			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($groundString) and ($dateString)";
+			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($groundString) and ($dateString) and (tickets_available>0) and (curdate()<=deadline_purchase)";
 		}
 		elseif ($category) {
-			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($categoryString)";
+			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($categoryString) and (tickets_available>0) and (curdate()<=deadline_purchase)";
 		}
 		elseif ($ground) {
-			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($groundString)";
+			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($groundString) and (tickets_available>0) and (curdate()<=deadline_purchase)";
 		}
 		elseif ($dateStart or $dateEnd) {
-			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($dateString)";
+			$query = "select * from event join venue on event.venue_id=venue.venue_id where ($dateString) and (tickets_available>0) and (curdate()<=deadline_purchase)";
 		}
 		else;
 		return $query;

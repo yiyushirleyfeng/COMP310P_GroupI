@@ -5,38 +5,28 @@
 	$user_id = $_COOKIE['user_id'];
 	
 	if ($username) {
-		echo "<p>You are logged in as $username</p>";
+	echo "<p style='color:white'>You are logged in as $username<p>";
 	}
 	else {
-		header("Location: Page_11.php");
+		header("Location: index.php");
 		exit;
 	}
 	
-	$event_id = $_GET['event_id'];
-	
 	$con = connectDatabase() or die('Error connecting to MySQL server.'. mysql_error());
-	//Generating all the tickets for the event that has not been booked yet
-	$query = "select * from ticket where event_id=$event_id and user_id is null";
+	//Generating PAST events that user has hosted
+	$query = "select * from event join venue on event.venue_id = venue.venue_id where event.host_id=$user_id and curdate()>date";
 	$result = mysqli_query($con,$query);
-	$row = mysqli_fetch_array($result);
-	$ticket_id = $row['ticket_id'];
-	//Booking one of the tickets that have not been booked
-	mysqli_query($con,"insert into booking (ticket_id, user_id) values ($ticket_id,$user_id)");
-	mysqli_query($con,"update ticket set user_id=$user_id where ticket_id=$ticket_id");
-	mysqli_query($con,"update event set tickets_available=tickets_available-1 where event_id=$event_id");
-	mysqli_close($con);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Booking Confirmation</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
-</head>
 
-<body>
-	<div>
+<html>
+	<head>
+		<title>Event History</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+<div>
 	<div class="logo">
     <div class="transbox">
         <img src="http://www.stirlingalbionfc.co.uk/wp-content/uploads/2017/07/football-game.png" alt="Logo" height="150" width="150"/>
@@ -63,16 +53,18 @@
 
 <div class="yourevents">
     <div>
-        <h6 id="yevent">Your event</h6>
-        <h6 id="createevent">|Create new event</h6>
-        <h6 id="eventhis">|Event history</h6>
+        <a href="event_page.php"><h6 id="yevent">Your event</h6></a>
+        <a href="createnewevent_page.php"><h6 id="createevent">|Create new event</h6></a>
+        <a href="eventhistory_page.php"><h6 id="eventhis">|Event history</h6></a>
     </div>
 	<br>
 </div>
 </div>
-<div>
-	<h1>Your booking is successful</h1>
-</div>
-
-</body>
+		<h1>EVENT HISTORY</h1>
+		<?php
+			while ($row = mysqli_fetch_array($result)) {
+				createEventHost($row); 
+			}
+		?>
+	</body>
 </html>
